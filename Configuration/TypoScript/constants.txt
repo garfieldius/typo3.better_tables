@@ -1,0 +1,31 @@
+
+
+styles.content.table >
+
+styles.content.table {
+
+	# cat=content/cTable/k2; type=boolean; label= Add additional info classes: Add css classes to the generated tags like tr-even, tr-odd or content-table
+	additionalCssClasses = 0
+
+	# cat=content/cTable/k3; type=string; label= Add custom css classes: Those will be added to the table tag, even if the prior option is set to false
+	cssClasses =
+
+	#cat=content/cTable/k5; type=options[None=0,nl2br=1,ParsefuncRte=2]; label= Content parse function: Use parse function for cell contents
+	cellParseFunc = 1
+
+	#cat=content/cTable/k6; type=options[LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_delimiter_pipe=124,LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_delimiter_semicolon=59,LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_delimiter_comma=44,LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_delimiter_colon=58,LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_delimiter_tab=9]; label= Column Delimiter: Divider between the single cell fields
+	fieldDelimiter = 124
+
+	#cat=content/cTable/k7; type=options[LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_quote_none=32,LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_quote_single=39,LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_tableparsing_quote_double=34]; label=Colum Wrapper: Wrapper around the column contents. Required if newline characters appear in the field content.
+	fieldWrap = 32
+
+	# cat=content/cTable/k8; type=boolean; label= Trim cells: Trim the content of a cell of spaces before adding them
+	trimFields = 0
+
+	headerPosition =
+
+	footer = 0
+
+	244 >
+}
+

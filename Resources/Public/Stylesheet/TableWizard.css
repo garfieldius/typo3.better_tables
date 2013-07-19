@@ -1,0 +1,32 @@
+
+#typo3-tablewizard td {
+	padding: 3px 5px;
+	text-align: left;
+	vertical-align: top;
+}
+
+
+#typo3-tablewizard td input[type=text],
+#typo3-tablewizard td textarea {
+	padding: 3px 5px;
+	border: 1px #ccc solid;
+}
+
+.mode-switch {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.mode-switch:hover {
+	text-decoration: none;
+}
+
+.mode-active {
+	font-weight: bold;
+}
+
+.invisible {
+	background: #fff;
+}
+#typo3-tablewizard tr:first-child td {
+	text-align: center;
+}

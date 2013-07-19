@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-02-29T20:52:35Z" product-name="better_tables">
+		<header/>
+		<body>
+			<trans-unit id="mode.header">
+				<source>Text inputs</source>
+			</trans-unit>
+			<trans-unit id="mode.input">
+				<source>Field</source>
+			</trans-unit>
+			<trans-unit id="mode.text">
+				<source>Textarea</source>
+			</trans-unit>
+			<trans-unit id="tt_content.trimFields">
+				<source>Trim the cell contents of white spaces</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

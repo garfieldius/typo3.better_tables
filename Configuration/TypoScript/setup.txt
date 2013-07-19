@@ -1,0 +1,30 @@
+tt_content.table {
+
+	20 >
+	20 = USER
+	20.userFunc = GeorgGrossberger\BetterTables\Controller\TableFrontendController->renderTable
+
+	20.defaults {
+		cssClasses = {$styles.content.table.cssClasses}
+		additionalCssClasses = {$styles.content.table.additionalCssClasses}
+		cellParseFunc = {$styles.content.table.cellParseFunc}
+		fieldDelimiter = {$styles.content.table.fieldDelimiter}
+		fieldWrap = {$styles.content.table.fieldWrap}
+		footer = {$styles.content.table.footer}
+		headerPosition = {$styles.content.table.headerPosition}
+	}
+
+	20.view {
+		template = EXT:better_tables/Resources/Private/Templates/Table.html
+		partials = EXT:better_tables/Resources/Private/Partials/
+		layouts = EXT:better_tables/Resources/Private/Layouts/
+	}
+
+	20.stdWrap {
+		editIcons = tt_content: cols, bodytext, [layout]
+		editIcons.beforeLastTag = 1
+		editIcons.iconTitle.data = LLL:EXT:css_styled_content/pi1/locallang.xml:eIcon.table
+
+		prefixComment = 2 | Table:
+	}
+}
