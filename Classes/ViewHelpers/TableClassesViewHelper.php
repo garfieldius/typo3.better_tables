@@ -9,6 +9,7 @@
  *                                                                     */
 
 namespace GeorgGrossberger\BetterTables\ViewHelpers;
+
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
@@ -23,6 +24,8 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 class TableClassesViewHelper extends AbstractViewHelper {
 
 	/**
+	 * Create a class attribute for the table tag
+	 *
 	 * @param array $settings
 	 * @param array $data
 	 * @return string
@@ -34,19 +37,11 @@ class TableClassesViewHelper extends AbstractViewHelper {
 		if ($settings['additionalCssClasses']) {
 			$classes[] = 'contenttable';
 			$classes[] = 'contenttable-' . intval($data['layout']);
-
-			if ($data['table_cellspacing']) {
-				$classes[] = 'contenttable-cellspacing-' . intval($data['table_cellspacing']);
-			}
-			if ($data['table_cellpadding']) {
-				$classes[] = 'contenttable-cellpadding-' . intval($data['table_cellpadding']);
-			}
-			if ($data['table_bgColor']) {
-				$classes[] = 'contenttable-color-' . intval($data['table_bgColor']);
-			}
 		}
 
-		$classes = array_merge($classes, GeneralUtility::trimExplode(' ', $settings['cssClasses'], TRUE));
+		if (!empty($settings['cssClasses'])) {
+			$classes = array_merge($classes, GeneralUtility::trimExplode(' ', $settings['cssClasses'], TRUE));
+		}
 
 		if (!empty($classes)) {
 			$content = ' class="' . implode(' ', $classes) . '"';

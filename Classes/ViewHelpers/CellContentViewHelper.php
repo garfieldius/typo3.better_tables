@@ -9,6 +9,7 @@
  *                                                                     */
 
 namespace GeorgGrossberger\BetterTables\ViewHelpers;
+
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -35,8 +36,10 @@ class CellContentViewHelper extends AbstractViewHelper {
 	}
 
 	/**
-	 * @param string|null $content
-	 * @param string|null $configuration
+	 * Convert or escape the given content
+	 *
+	 * @param string $content
+	 * @param string $configuration
 	 * @return string
 	 */
 	public function render($content = NULL, $configuration = NULL) {
@@ -56,6 +59,12 @@ class CellContentViewHelper extends AbstractViewHelper {
 		}
 	}
 
+	/**
+	 * Helper for faster access
+	 *
+	 * @param $content
+	 * @return string
+	 */
 	protected function hsc($content) {
 		return htmlspecialchars($content, ENT_COMPAT, 'UTF-8', FALSE);
 	}

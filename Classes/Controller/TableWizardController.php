@@ -9,15 +9,16 @@
  *                                                                     */
 
 namespace GeorgGrossberger\BetterTables\Controller;
+
 use TYPO3\CMS\Backend\Controller\Wizard\TableController;
 use TYPO3\CMS\Backend\Utility\IconUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Description
+ * Controller for the table wizard
  *
- * @package packagename
+ * @package GeorgGrossberger.BetterTables
  * @author Georg Großberger <contact@grossberger-ge.org>
  * @copyright 2013 by Georg Großberger
  * @license GPL v3 http://www.gnu.org/licenses/gpl-3.0.txt

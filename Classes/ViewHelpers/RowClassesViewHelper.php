@@ -9,6 +9,7 @@
  *                                                                     */
 
 namespace GeorgGrossberger\BetterTables\ViewHelpers;
+
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
@@ -23,6 +24,8 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 class RowClassesViewHelper extends AbstractViewHelper {
 
 	/**
+	 * Create a class attribute for a tr tag
+	 *
 	 * @param array $settings
 	 * @param array $iteration
 	 * @return string

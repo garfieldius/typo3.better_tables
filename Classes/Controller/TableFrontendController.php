@@ -24,6 +24,8 @@ use TYPO3\CMS\Frontend\Plugin\AbstractPlugin;
 class TableFrontendController extends AbstractPlugin {
 
 	/**
+	 * Render the table HTML
+	 *
 	 * @param string $content
 	 * @param array $conf
 	 * @return string
@@ -63,6 +65,8 @@ class TableFrontendController extends AbstractPlugin {
 	}
 
 	/**
+	 * Explode the CSV data into a two-dimensional array
+	 *
 	 * @param array $config
 	 * @return array
 	 */
@@ -108,6 +112,12 @@ class TableFrontendController extends AbstractPlugin {
 		return $rows;
 	}
 
+	/**
+	 * Merge Typoscript configuration and settings in the content element
+	 *
+	 * @param array $baseConf
+	 * @return array
+	 */
 	protected function mergeConfigurations(array $baseConf) {
 		$config = $baseConf;
 		$flexformData = GeneralUtility::xml2array($this->cObj->data['pi_flexform']);
@@ -141,6 +151,13 @@ class TableFrontendController extends AbstractPlugin {
 		return $config;
 	}
 
+	/**
+	 * Under some circumstances a setting contains an integer
+	 * that is the ASCII number of a needed character
+	 *
+	 * @param $value
+	 * @return null|string
+	 */
 	protected function charNumberToChar($value) {
 		if (is_numeric($value)) {
 			$value = (int) $value;
