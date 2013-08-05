@@ -15,6 +15,36 @@
 			<trans-unit id="tt_content.trimFields">
 				<source>Trim the cell contents of white spaces</source>
 			</trans-unit>
+			<trans-unit id="wiz.add">
+				<source>Add one next to this</source>
+			</trans-unit>
+			<trans-unit id="wiz.delete">
+				<source>Delete this one</source>
+			</trans-unit>
+			<trans-unit id="wiz.left">
+				<source>Move one position to the left</source>
+			</trans-unit>
+			<trans-unit id="wiz.right">
+				<source>Move one position to the right</source>
+			</trans-unit>
+			<trans-unit id="wiz.first">
+				<source>Move to outer left</source>
+			</trans-unit>
+			<trans-unit id="wiz.last">
+				<source>Move to outer right</source>
+			</trans-unit>
+			<trans-unit id="wiz.top">
+				<source>Move to top</source>
+			</trans-unit>
+			<trans-unit id="wiz.up">
+				<source>Move up one position</source>
+			</trans-unit>
+			<trans-unit id="wiz.down">
+				<source>Move down one position</source>
+			</trans-unit>
+			<trans-unit id="wiz.bottom">
+				<source>Move to bottom</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

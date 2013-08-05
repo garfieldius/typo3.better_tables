@@ -11,6 +11,9 @@ TYPO3.jQuery(function($) {
 	"use strict";
 
 	var root = $("#typo3-tablewizard"),
+		isSmall = document.getElementById("textFields").checked,
+		newInput = '<input type="text" />',
+		newText = '<textarea />',
 		containerId = 'wiz-button-container',
 
 		/**
@@ -30,7 +33,7 @@ TYPO3.jQuery(function($) {
 				var column = 0;
 				row += 2;
 
-				$(this).find("input").each(function() {
+				$(this).find("input,textarea").each(function() {
 					column += 2;
 					this.name = 'TABLE[c][' + row + '][' + column + ']';
 				});
@@ -122,8 +125,17 @@ TYPO3.jQuery(function($) {
 		 * Create a new data cell
 		 */
 		makeCell = function () {
-			return $('<td />').html('<input type="text">');
+			return $('<td />').html(isSmall ? newInput : newText);
 		};
+
+	$("#textFields").click(function(ev) {
+		isSmall = this.checked;
+		root.find("input,textarea").each(function() {
+			var val = $(this).val();
+			$(this).replaceWith($(isSmall ? newInput : newText).val(val))
+		});
+		ev.stopImmediatePropagation();
+	});
 
 	// Event delegation to have only one listener for the whole thing
 	$(document).on("click", '.wiz-action', function() {

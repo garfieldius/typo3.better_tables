@@ -14,6 +14,7 @@ use TYPO3\CMS\Backend\Controller\Wizard\TableController;
 use TYPO3\CMS\Backend\Utility\IconUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * Controller for the table wizard
@@ -26,6 +27,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class TableWizardController extends TableController {
 
 	/**
+	 *
 	 * @param array $cfgArr
 	 * @param array $row
 	 * @return string
@@ -50,18 +52,26 @@ class TableWizardController extends TableController {
 		// Add "templates" for the buttons of the wizard
 		$content .=
 			'<div class="button-templates" style="display:none;">' .
-				'<a class="wiz-delete wiz-action">' . IconUtility::getSpriteIcon('actions-selection-delete') . '</a>' .
-				'<a class="wiz-up wiz-action">' . IconUtility::getSpriteIcon('actions-move-up') . '</a>' .
-				'<a class="wiz-down wiz-action">' . IconUtility::getSpriteIcon('actions-move-down') . '</a>' .
-				'<a class="wiz-bottom wiz-action">' . IconUtility::getSpriteIcon('actions-view-go-down') . '</a>' .
-				'<a class="wiz-top wiz-action">' . IconUtility::getSpriteIcon('actions-view-go-up') . '</a>' .
-				'<a class="wiz-left wiz-action">' . IconUtility::getSpriteIcon('actions-move-left') . '</a>' .
-				'<a class="wiz-right wiz-action">' . IconUtility::getSpriteIcon('actions-move-right') . '</a>' .
-				'<a class="wiz-first wiz-action">' . IconUtility::getSpriteIcon('actions-view-go-back') . '</a>' .
-				'<a class="wiz-last wiz-action">' . IconUtility::getSpriteIcon('actions-view-go-forward') . '</a>' .
-				'<a class="wiz-add wiz-action">' . IconUtility::getSpriteIcon('actions-edit-add') . '</a>' .
+				'<a class="wiz-delete wiz-action" title="' . $this->getLabel('delete') . '">' . IconUtility::getSpriteIcon('actions-selection-delete') . '</a>' .
+				'<a class="wiz-up wiz-action" title="' . $this->getLabel('up') . '">' . IconUtility::getSpriteIcon('actions-move-up') . '</a>' .
+				'<a class="wiz-down wiz-action" title="' . $this->getLabel('down') . '">' . IconUtility::getSpriteIcon('actions-move-down') . '</a>' .
+				'<a class="wiz-bottom wiz-action" title="' . $this->getLabel('bottom') . '">' . IconUtility::getSpriteIcon('actions-view-go-down') . '</a>' .
+				'<a class="wiz-top wiz-action" title="' . $this->getLabel('top') . '">' . IconUtility::getSpriteIcon('actions-view-go-up') . '</a>' .
+				'<a class="wiz-left wiz-action" title="' . $this->getLabel('left') . '">' . IconUtility::getSpriteIcon('actions-move-left') . '</a>' .
+				'<a class="wiz-right wiz-action" title="' . $this->getLabel('right') . '">' . IconUtility::getSpriteIcon('actions-move-right') . '</a>' .
+				'<a class="wiz-first wiz-action" title="' . $this->getLabel('first') . '">' . IconUtility::getSpriteIcon('actions-view-go-back') . '</a>' .
+				'<a class="wiz-last wiz-action" title="' . $this->getLabel('last') . '">' . IconUtility::getSpriteIcon('actions-view-go-forward') . '</a>' .
+				'<a class="wiz-add wiz-action" title="' . $this->getLabel('add') . '">' . IconUtility::getSpriteIcon('actions-edit-add') . '</a>' .
 			'</div>';
 
 		return $content;
+	}
+
+	/**
+	 * @param string $key
+	 * @return NULL|string
+	 */
+	protected function getLabel($key) {
+		return htmlspecialchars(LocalizationUtility::translate('wiz.' . $key, 'BetterTables'), ENT_COMPAT, 'UTF-8', FALSE);
 	}
 }
