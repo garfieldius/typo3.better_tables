@@ -25,9 +25,10 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '0.0.1',
 	'constraints' => array(
 		'depends' => array(
-			'php' => '5.3.8-5.5.99',
+			'php' => '5.3.2-5.5.99',
 			'extbase' => '6.1.0-6.2.99',
 			'fluid' => '6.1.0-6.2.99',
+			'css_styled_content' => '6.1.0-6.2.99',
 		),
 		'conflicts' => array(
 		),
