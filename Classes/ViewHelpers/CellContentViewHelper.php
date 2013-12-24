@@ -1,4 +1,5 @@
 <?php
+namespace GeorgGrossberger\BetterTables\ViewHelpers;
 /*                                                                     *
  * This file is brought to you by Georg Großberger                     *
  * (c) 2013 by Georg Großberger <contact@grossberger-ge.org>           *
@@ -7,8 +8,6 @@
  * the terms of the GNU General Public License, either version 3       *
  * of the License, or (at your option) any later version.              *
  *                                                                     */
-
-namespace GeorgGrossberger\BetterTables\ViewHelpers;
 
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
