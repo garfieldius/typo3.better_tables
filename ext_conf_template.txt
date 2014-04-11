@@ -1,2 +1,0 @@
-  # cat=basic; type=boolean; label=Enable textarea fields: Allow the optional use of textarea fields in the table wizard. May cause problems with newline characters.
-enableRoundtrip = 0
