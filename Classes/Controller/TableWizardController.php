@@ -18,10 +18,8 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 /**
  * Controller for the table wizard
  *
- * @package GeorgGrossberger.BetterTables
- * @author Georg Großberger <contact@grossberger-ge.org>
- * @copyright 2013 by Georg Großberger
- * @license GPL v3 http://www.gnu.org/licenses/gpl-3.0.txt
+ * @author Georg Großberger <georg.grossberger@cyberhouse.at>
+ * @license http://opensource.org/licenses/MIT MIT - License
  */
 class TableWizardController extends TableController {
 

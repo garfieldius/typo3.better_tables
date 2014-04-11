@@ -1,12 +1,10 @@
 <?php
-/*                                                                     *
- * This file is brought to you by Georg Großberger                     *
- * (c) 2013 by Georg Großberger <contact@grossberger-ge.org>           *
- *                                                                     *
- * It is free software; you can redistribute it and/or modify it under *
- * the terms of the GNU General Public License, either version 3       *
- * of the License, or (at your option) any later version.              *
- *                                                                     */
+/*                                                                       *
+ * Copyright 2014 Georg Großberger <contact@grossberger-ge.org           *
+ *                                                                       *
+ * This is free software; you can redistribute it and/or modify it under *
+ * the terms of the MIT- / X11 - License                                 *
+ *                                                                       */
 
 // Insert our own flexform
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('*', 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/plugin_table.xml', 'table');
