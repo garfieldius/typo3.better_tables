@@ -1,9 +1,9 @@
 
 .. include:: _IncludedDirectives.rst
 
-=================
-Extension Name
-=================
+=============
+Better Tables
+=============
 
 :Extension name: Better Tables
 :Extension key: better_tables
