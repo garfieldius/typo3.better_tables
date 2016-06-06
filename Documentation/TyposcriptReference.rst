@@ -4,6 +4,8 @@ Typoscript Reference
 
 The Typoscript template **Better Tables** must be included for this extension to work and the following options to be available.
 
+Please note: If editors choose »default« in the table settings of the content element, then the given TypoScript values are used. You are required to set/check some defaults like »fieldDelimiter«.
+
 Options
 -------
 
@@ -17,7 +19,7 @@ Options
 		string
 
 	Description
-		CSS class selector(s) to add to the table tag.
+		CSS class to add to the table tag.
 
 	Default
 		*None*
@@ -35,7 +37,7 @@ Options
 		If enabled, additional CSS classes will be added to the table, tr and td tags.
 
 	Default
-		no
+		0
 
 .. ..................................
 .. container:: table-row
@@ -54,6 +56,51 @@ Options
 
 	Default
 		1 (htmlSpecialChars)
+
+.. ..................................
+.. container:: table-row
+
+	Property
+		fieldDelimiter
+
+	Data type
+		string
+
+	Description
+		The character which specifies to boundary between separate cells in each line of text
+
+	Default
+		| (Pipe)
+
+.. ..................................
+.. container:: table-row
+
+	Property
+		fieldWrap
+
+	Data type
+		string
+
+	Description
+		Wrapper around the content of a single column. Required if the cell content includes uses special characters.
+
+	Default
+		*None*
+
+.. ..................................
+.. container:: table-row
+
+	Property
+		trimFields
+
+	Data type
+		boolean
+
+	Description
+		Trim the content of a cell of spaces before adding them.
+
+	Default
+		0
 
 .. ..................................
 .. container:: table-row
@@ -87,9 +134,7 @@ Options
 		Has no effect if *headerPosition* is set to an other value than *top*
 
 	Default
-		no
-
-
+		0
 
 Constants
 ---------
