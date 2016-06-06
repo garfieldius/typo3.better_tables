@@ -40,7 +40,7 @@ Table summary      The content of the summary attribute. A short explanation
                    page
 ================   ===========================================================
 
-For all other settings, please see the `TypoScript Reference`_, because their values are set by Typoscript if the displayed option is *Default*. Changing this will override the value set by Typoscript.
+For all other settings, please see the `TypoScript Reference`_, because their values are set by TypoScript if the displayed option is *Default*. Changing this will override the value set by TypoScript.
 
 .. _TypoScript Reference: TyposcriptReference.rst
 

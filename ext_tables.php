@@ -6,11 +6,11 @@
  * the terms of the MIT- / X11 - License                                 *
  *                                                                       */
 
-// Insert our own flexform
+// Overwrite table flexform with our own
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('*', 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/plugin_table.xml', 'table');
 
-// Typoscript overrides
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/Typoscript/', 'Better Tables');
+// TypoScript
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/', 'Better Tables');
 
 // Remove obsolete items from tt_content, eg cellspacing
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('

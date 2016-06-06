@@ -77,7 +77,7 @@ class TableFrontendController extends AbstractPlugin {
 		$content = str_replace("\r", '', $this->cObj->data['bodytext']);
 		$rowDelimiter = '\s*' . preg_quote(LF, '/') . '\s*';
 		$fieldWrap = preg_quote($config['fieldWrap'], '/');
-		$columnDelimiter = $config['fieldDelimiter'];
+		$columnDelimiter = preg_quote($config['fieldDelimiter'], '/');
 
 		if (!empty($fieldWrap)) {
 			$rowDelimiter = $fieldWrap . $rowDelimiter . $fieldWrap;
