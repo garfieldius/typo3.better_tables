@@ -129,6 +129,7 @@ class TableFrontendController extends AbstractPlugin {
 			'headerPosition' => array('acctables_headerpos', 'sDEF'),
 			'cssClasses' => array('acctables_tableclass', 'sDEF'),
 			'additionalCssClasses' => array('acctables_nostyles', 'sDEF'),
+			'colWidth' => array('acctables_colwidth', 'sDEF'),
 			'fieldWrap' => array('tableparsing_quote', 's_parsing'),
 			'fieldDelimiter' => array('tableparsing_delimiter', 's_parsing'),
 			'trimFields' => array('tableparsing_trimfields', 's_parsing'),
@@ -145,6 +146,10 @@ class TableFrontendController extends AbstractPlugin {
 			if (NULL !== $value) {
 				$config[$configField] = $value;
 			}
+		}
+
+		if(!empty($config['colWidth'])) {
+			$config['colWidth'] = GeneralUtility::trimExplode(',', $config['colWidth']);
 		}
 
 		return $config;

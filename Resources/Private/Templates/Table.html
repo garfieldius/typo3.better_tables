@@ -1,17 +1,24 @@
 {namespace bt=GeorgGrossberger\BetterTables\ViewHelpers}
 
 <table{bt:tableClasses(settings: settings, data:data)}<f:if condition="{settings.summary}"> summary="{settings.summary -> f:format.htmlspecialchars()}"</f:if>>
-<f:if condition="{settings.caption}"><caption>{settings.caption -> f:format.htmlspecialchars()}</caption></f:if>
-	<f:if condition="{header -> f:count()} > 0">
-	<f:if condition="{settings.headerPosition} == 'top'">
-	<thead>
-		<tr{bt:rowClasses(settings: settings, iteration: {index: 0, isFirst: 1, isLast: 1, isOdd: 0})}>
-		<f:for each="{header}" as="cell" iteration="cellIteration">
-			<th{bt:cellClasses(settings: settings, iteration: cellIteration)}>{cell -> bt:cellContent(configuration: settings.cellParseFunc)}</th>
-		</f:for>
-		</tr>
-	</thead>
+	<f:if condition="{settings.caption}"><caption>{settings.caption -> f:format.htmlspecialchars()}</caption></f:if>
+	<f:if condition="{settings.colWidth -> f:count()} > 0">
+		<colgroup>
+			<f:for each="{settings.colWidth}" as="singleColWidth">
+				<col width="{f:if(condition:'{singleColWidth}', then: '{singleColWidth}%', else: '*')}">
+			</f:for>
+		</colgroup>
 	</f:if>
+	<f:if condition="{header -> f:count()} > 0">
+		<f:if condition="{settings.headerPosition} == 'top'">
+			<thead>
+				<tr{bt:rowClasses(settings: settings, iteration: {index: 0, isFirst: 1, isLast: 1, isOdd: 0})}>
+				<f:for each="{header}" as="cell" iteration="cellIteration">
+					<th{bt:cellClasses(settings: settings, iteration: cellIteration)}>{cell -> bt:cellContent(configuration: settings.cellParseFunc)}</th>
+				</f:for>
+				</tr>
+			</thead>
+		</f:if>
 	</f:if>
 	<tbody>
 		<f:for each="{rows}" as="row" iteration="rowIteration">
