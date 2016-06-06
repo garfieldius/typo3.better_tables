@@ -22,3 +22,6 @@
 		table_cellpadding.types.table.disabled = 1
 	}
 ');
+
+// Overwrite default settings in table wizard
+$TCA['tt_content']['columns']['bodytext']['config']['wizards']['table']['params']['smallFields'] = 1;

@@ -16,7 +16,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
- * Controller for the table wizard
+ * Controller for the table wizard - extends the core wizard
  *
  * @author Georg Großberger <georg.grossberger@cyberhouse.at>
  * @license http://opensource.org/licenses/MIT MIT - License
@@ -24,13 +24,25 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 class TableWizardController extends TableController {
 
 	/**
+	 * Initialization of the class
 	 *
-	 * @param array $cfgArr
-	 * @param array $row
-	 * @return string
+	 * @return void
+	 */
+	protected function init() {
+		parent::init();
+		// show textareas or input fields in wizard
+		// »smallFields« parameter (0 = textarea) is set in TCA, »textFields« is a wizard post value
+		$this->inputStyle = (!empty($this->P['params']['smallFields']) || !empty($this->TABLECFG['textFields']))? 1 : 0;
+	}
+
+	/**
+	 * Creates the HTML for the Table Wizard Module
+	 *
+	 * @param array $cfgArr Table config array
+	 * @param array $row Current parent record array
+	 * @return string HTML for the table wizard
 	 */
 	public function getTableHTML($cfgArr, $row) {
-
 		// Make sure we load jQuery
 		$pageRenderer = $this->doc->getPageRenderer();
 		$pageRenderer->loadJquery();
@@ -40,7 +52,7 @@ class TableWizardController extends TableController {
 		$pageRenderer->addCssFile($relPath . 'Stylesheet/TableWizard.css');
 		$pageRenderer->addJsFile($relPath . 'Javascript/TableWizard.js');
 
-		// Generate the table and strip useless stuff
+		// Generate the table markup and strip useless stuff
 		$content = parent::getTableHTML($cfgArr, $row);
 		$content = preg_replace('/ style="width[^"]+"/', '', $content);
 		$content = preg_replace('/<td class="bgColor5">[^' . "\n" . ']+<\/td>/', '', $content);
