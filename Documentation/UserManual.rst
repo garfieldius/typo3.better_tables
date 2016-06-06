@@ -30,15 +30,18 @@ Settings
 
 The following two settings can only be set by the content element
 
-================   ===========================================================
-Setting            Meaning
-================   ===========================================================
-Table caption      Insert a caption in the table. This will generate a
-                   caption tag, that works similar to a h1 tag
-Table summary      The content of the summary attribute. A short explanation
-                   of what the table contains. Is not visible on the rendered
-                   page
-================   ===========================================================
+=====================   ===========================================================
+Setting                 Meaning
+=====================   ===========================================================
+Table caption           Insert a caption in the table. This will generate a
+                        caption tag, that works similar to a h1 tag
+Table summary           The content of the summary attribute. A short explanation
+                        of what the table contains. Is not visible on the rendered
+                        page
+Table column width      Optional width of each column in percentage terms.
+                        E.g. “50, 25, 25“ for three columns, or »75« if you would
+                        like to set the width of the first column only
+=====================   ===========================================================
 
 For all other settings, please see the `TypoScript Reference`_, because their values are set by Typoscript if the displayed option is *Default*. Changing this will override the value set by Typoscript.
 

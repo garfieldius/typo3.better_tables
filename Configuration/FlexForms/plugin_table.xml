@@ -85,6 +85,7 @@
 							</config>
 						</TCEforms>
 					</acctables_headerpos>
+
 					<acctables_nostyles>
 						<TCEforms>
 							<label>LLL:EXT:css_styled_content/locallang_db.xml:tt_content.tx_cssstyledcontent_acctables_nostyles</label>
@@ -120,6 +121,16 @@
 							</config>
 						</TCEforms>
 					</acctables_tableclass>
+
+					<acctables_colwidth>
+						<TCEforms>
+							<label>LLL:EXT:better_tables/Resources/Private/Language/locallang.xlf:tt_content.colwidth</label>
+							<config>
+								<type>input</type>
+								<size>40</size>
+							</config>
+						</TCEforms>
+					</acctables_colwidth>
 				</el>
 			</ROOT>
 		</sDEF>

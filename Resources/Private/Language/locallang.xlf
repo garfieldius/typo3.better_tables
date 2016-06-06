@@ -12,6 +12,9 @@
 			<trans-unit id="mode.text">
 				<source>Textarea</source>
 			</trans-unit>
+			<trans-unit id="tt_content.colwidth">
+				<source>Width of each column in percentage terms (e.g. “50, 25, 25“ for three columns)</source>
+			</trans-unit>
 			<trans-unit id="tt_content.trimFields">
 				<source>Trim the cell contents of white spaces</source>
 			</trans-unit>
