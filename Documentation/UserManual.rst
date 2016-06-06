@@ -70,6 +70,10 @@ Here you see how the CSV content is turned into rows and columns. The content of
 
 By default, the option *Small fields* below the wizard is selected. This means the values will be inside single - line fields. Disabling this option, will render textarea fields that allow the useage of linebreaks and larger texts.
 
+To disable the *Small fields* checkbox by default use this TCA setting:
+
+	$TCA['tt_content']['columns']['bodytext']['config']['wizards']['table']['params']['smallFields'] = 0;
+
 .. tip::
 	When using big fields (textarea), be sure to use a **Text Delimiter** option, other than *None*. Otherwise linebreaks in the text will trigger the creation of an additional column which will destroy the table layout.
 
